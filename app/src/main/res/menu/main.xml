@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_themthu"
+        android:orderInCategory="100"
+        android:title="Thêm khỏn thu"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_themchi"
+        android:orderInCategory="100"
+        android:title="Thêm khoản chi"
+        app:showAsAction="never" />
+</menu>
