@@ -39,13 +39,13 @@
                 android:text="Phone:" />
 
             <EditText
+                android:text="admin"
                 android:id="@+id/edUserNameLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:ems="10"
-                android:hint="userName/Phone"
                 android:inputType="text" />
 
             <TextView
@@ -56,13 +56,13 @@
                 android:text="PassWord:" />
 
             <EditText
+                android:text="admin"
                 android:id="@+id/edPasswordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:ems="10"
-                android:hint="PassWord"
                 android:inputType="textPassword" />
         </LinearLayout>
     </LinearLayout>
