@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".QuenPassActivity">
+<TextView
+    android:textColor="#5C5353"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    android:typeface="sans"
+    android:text="Quên mật khẩu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Nhập số điện thoại bạn đã sử dụng để tạo tài khoản của bạn và chúng tôi sẽ gửi email cho bạn một liên kết để đặt lại mật khẩu của bạn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/chec_ked_PhoneNumber"
+        android:hint="Phone number"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:text="Gửi mã"
+        android:layout_margin="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="nhanMa"
+        />
+</LinearLayout>
