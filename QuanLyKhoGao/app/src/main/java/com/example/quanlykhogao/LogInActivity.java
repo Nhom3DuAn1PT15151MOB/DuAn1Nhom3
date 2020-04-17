@@ -30,9 +30,9 @@ public class LogInActivity extends AppCompatActivity  {
         chkRememberPass = findViewById(R.id.checkbox);
         initPreFerences();
         String data = sharedPreferences.getString("DATA", "");
-        edUserName.setText(data);
+        edUserName.setText("admin");
         String data2 = sharedPreferences.getString("DATA2", "");
-        edPassword.setText(data2);
+        edPassword.setText("admin");
     }
 public boolean check(){
         if (chkRememberPass.isSelected())
