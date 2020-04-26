@@ -16,7 +16,7 @@ public interface KhoGaoDAO {
     List<KhoGao> getAll();
     //them gao:
     @Insert
-    public long insertGao (KhoGao khoGao);
+    public long[] insertGao(KhoGao... khoGao);
     //Xoa
     @Delete
     void delete (KhoGao khoGao);

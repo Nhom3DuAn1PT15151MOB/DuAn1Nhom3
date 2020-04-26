@@ -26,7 +26,7 @@ public class KhoGaoActivity extends AppCompatActivity {
         edGia = findViewById(R.id.editGia);
         edSoLuong = findViewById(R.id.editSoLuong);
         edDonVi = findViewById(R.id.editDonViTinh);
-        db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"khogao.db").allowMainThreadQueries().build();
+        db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"KhoGao.db").allowMainThreadQueries().build();
 
     }
 
@@ -39,8 +39,8 @@ public class KhoGaoActivity extends AppCompatActivity {
         khoGao.Gia = Double.valueOf(edGia.getText().toString());
         khoGao.DonVi = edDonVi.getText().toString();
         khoGao.SoLuong = Integer.valueOf(edSoLuong.getText().toString());
-
-        if (db.khoGaoDAO().insertGao(khoGao)>0){
+        long[] longs = db.khoGaoDAO().insertGao(khoGao);
+        if (longs[0]>0){
             Toast.makeText(getApplicationContext(),"Thêm gạo thành công",Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(getApplicationContext(),"Thêm thất bại",Toast.LENGTH_SHORT).show();

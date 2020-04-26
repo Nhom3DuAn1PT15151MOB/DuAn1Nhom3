@@ -15,7 +15,7 @@ public interface VatTuDAO {
     List <VatTu> getAll();
     //them Vật tu:
     @Insert
-    public long insertND (VatTu vatTu);
+    public long[] insertVatTu (VatTu... vatTu);
     //Xoa
     @Delete
     void delete (VatTu vatTu);

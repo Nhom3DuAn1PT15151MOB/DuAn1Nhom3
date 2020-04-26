@@ -10,7 +10,7 @@ import com.example.quanlykhogao.model.KhoGao;
 import com.example.quanlykhogao.model.NguoiDung;
 import com.example.quanlykhogao.model.VatTu;
 
-@Database(entities = {NguoiDung.class, KhoGao.class, VatTu.class},version = 2)
+@Database(entities = {NguoiDung.class, KhoGao.class, VatTu.class},version = 5)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract NguoiDungDAO nguoiDungDAO();
     public abstract KhoGaoDAO khoGaoDAO();

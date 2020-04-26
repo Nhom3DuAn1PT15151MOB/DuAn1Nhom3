@@ -14,7 +14,7 @@ public interface NguoiDungDAO {
     List<NguoiDung> getAll();
     //them nguoi dung:
     @Insert
-    public long insertND (NguoiDung nguoiDung);
+    public long[] insertND (NguoiDung... nguoiDung);
     //Xoa
     @Delete
     void delete (NguoiDung nguoiDung);

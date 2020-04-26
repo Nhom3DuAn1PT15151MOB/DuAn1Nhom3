@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "nguoidung")
 public class NguoiDung {
     @PrimaryKey
     public int id;
@@ -13,7 +13,7 @@ public class NguoiDung {
     public String TenNguoiDung;
 
     @ColumnInfo (name = "phone")
-    public int phone;
+    public String phone;
 
     @ColumnInfo (name = "password")
     public String passWord;

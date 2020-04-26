@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("Quản lý kho gạo");
-        setTheme(R.color.red);
+     //   AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+       //         AppDatabase.class, "NguoiDung.db, KhoGao.db, VatTu.db").allowMainThreadQueries().build();
+
         if (CheckLoginShap() < 0) {
             Intent i = new Intent(MainActivity.this, LogInActivity.class);
             startActivity(i);

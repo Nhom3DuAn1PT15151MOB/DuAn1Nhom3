@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ AppDatabase db;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vat_tu);
+        setTitle("Vật Tư");
         edChiPhi = findViewById(R.id.editChiPhi);
         edMaVatTu = findViewById(R.id.editMaVatTu);
         edTenVatTu = findViewById(R.id.editTenVatTu);
@@ -32,10 +34,11 @@ AppDatabase db;
         vatTu.MaVatTu = edMaVatTu.getText().toString();
         vatTu.TenVatTu = edTenVatTu.getText().toString();
         vatTu.ChiPhi = Double.valueOf(edChiPhi.getText().toString());
-
-        if (db.vatTuDAO().insertND(vatTu)>0){
-            Toast.makeText(getApplicationContext(),"Thêm thành công",Toast.LENGTH_SHORT).show();
+        long[] result = db.vatTuDAO().insertVatTu(vatTu);
+        if (result[0] > 0) {
+            Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Thêm thất bại", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(getApplicationContext(),"Thêm thất bại",Toast.LENGTH_SHORT).show();
     }
 }

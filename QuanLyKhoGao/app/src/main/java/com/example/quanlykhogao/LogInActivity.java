@@ -24,6 +24,7 @@ public class LogInActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Đăng nhập");
         setContentView(R.layout.activity_log_in);
         edPassword = findViewById(R.id.edPasswordLogin);
         edUserName = findViewById(R.id.edUserNameLogin);
