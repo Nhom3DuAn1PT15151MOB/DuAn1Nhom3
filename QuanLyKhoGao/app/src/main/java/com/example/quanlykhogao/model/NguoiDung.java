@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey;
 public class NguoiDung {
     @PrimaryKey
     public int id;
-
     @ColumnInfo (name = "tenNguoiDung")
     public String TenNguoiDung;
 

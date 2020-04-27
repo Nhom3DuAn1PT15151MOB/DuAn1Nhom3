@@ -21,11 +21,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:text="Tên Vật tư"
                 android:id="@+id/tvTenVatTu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:text="000000 vnd"
                 android:id="@+id/tvGia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

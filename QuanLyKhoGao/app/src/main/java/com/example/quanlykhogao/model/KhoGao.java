@@ -21,7 +21,4 @@ public class KhoGao {
     @ColumnInfo (name = "DonVi")
     public String DonVi;
 
-
-
-
 }

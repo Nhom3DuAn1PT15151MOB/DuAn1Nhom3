@@ -2,7 +2,6 @@ package com.example.quanlykhogao.sqlite;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
-
 import com.example.quanlykhogao.dao.KhoGaoDAO;
 import com.example.quanlykhogao.dao.NguoiDungDAO;
 import com.example.quanlykhogao.dao.VatTuDAO;

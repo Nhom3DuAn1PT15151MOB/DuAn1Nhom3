@@ -8,13 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.room.Room;
-
 import com.example.quanlykhogao.R;
 import com.example.quanlykhogao.model.KhoGao;
 import com.example.quanlykhogao.sqlite.AppDatabase;
-
 import java.util.List;
 
 public class KhoGaoAdapter extends BaseAdapter {
