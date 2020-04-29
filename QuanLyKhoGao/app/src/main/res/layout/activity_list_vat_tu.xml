@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ListVatTuActivity">
-<ListView
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerviewVT"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/lvVatTu"/>
+    android:layout_height="match_parent"/>
 </LinearLayout>

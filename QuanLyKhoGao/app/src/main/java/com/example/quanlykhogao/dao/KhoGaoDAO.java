@@ -20,4 +20,5 @@ public interface KhoGaoDAO {
     //Xoa
     @Delete
     void delete (KhoGao khoGao);
+
 }

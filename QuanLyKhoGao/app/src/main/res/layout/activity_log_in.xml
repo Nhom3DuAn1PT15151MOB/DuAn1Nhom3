@@ -39,7 +39,7 @@
                 android:text="Phone:" />
 
             <EditText
-                android:text="admin"
+                android:text="0333049379"
                 android:id="@+id/edUserNameLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -67,4 +67,11 @@
 
     </TableLayout>
     </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:onClick="update"
+        android:text="Cập nhật"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="34dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "vattu")
+@Entity(tableName = "VatTu")
 public class VatTu {
     @PrimaryKey
     public int id;

@@ -34,7 +34,7 @@ public class KhoGaoAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return arrGao.size();
+        return arrGao.get(position);
     }
 
     @Override

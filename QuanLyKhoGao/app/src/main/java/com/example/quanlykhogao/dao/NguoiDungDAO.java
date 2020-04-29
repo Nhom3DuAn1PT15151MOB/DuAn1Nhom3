@@ -10,7 +10,7 @@ import com.example.quanlykhogao.model.NguoiDung;
 import java.util.List;
 @Dao
 public interface NguoiDungDAO {
-    @Query("SELECT * FROM nguoidung")
+    @Query("SELECT * FROM NguoiDung")
     List<NguoiDung> getAll();
     //them nguoi dung:
     @Insert

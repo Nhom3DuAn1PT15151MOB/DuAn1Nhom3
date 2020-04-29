@@ -39,7 +39,6 @@ public class NguoiDungActivity extends AppCompatActivity {
         edpassWor = findViewById(R.id.editPassWord);
         edRePassWord = findViewById(R.id.editRePassWord);
         checkBox = findViewById(R.id.checkboxDK);
-nguoiDungQueryTask = new NguoiDungQueryTask(this);
 
     }
 public boolean checkBox(){
@@ -47,7 +46,6 @@ public boolean checkBox(){
             return true;
         return false;
 }
-
     @SuppressLint("ResourceAsColor")
     public boolean valiDateForm(){
         String pass = edpassWor.getText().toString();
@@ -87,11 +85,6 @@ public boolean checkBox(){
                 nguoiDung.TenNguoiDung = edNam.getText().toString();
                 nguoiDung.phone = edphone.getText().toString();
                 nguoiDung.passWord = edpassWor.getText().toString();
-                nguoiDungQueryTask.insertNguoiDung(new NguoiDungQueryTask.OnQuery<long[]>() {
-                    @Override
-                    public void onResult(long[] longs) {
-                    }
-                }, nguoiDung);
                 long[] result = db.nguoiDungDAO().insertND(nguoiDung);
                 if (result[0] > 0) {
                     Toast.makeText(getApplicationContext(), "Đăng ký thành công", Toast.LENGTH_SHORT).show();

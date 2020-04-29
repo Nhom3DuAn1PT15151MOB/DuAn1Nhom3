@@ -3,6 +3,7 @@ package com.example.quanlykhogao;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -41,6 +42,8 @@ public class KhoGaoActivity extends AppCompatActivity {
         khoGao.SoLuong = Integer.valueOf(edSoLuong.getText().toString());
         long[] longs = db.khoGaoDAO().insertGao(khoGao);
         if (longs[0]>0){
+            Intent intent = new Intent(this,ListKhoGaoActivity.class);
+            startActivity(intent);
             Toast.makeText(getApplicationContext(),"Thêm gạo thành công",Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(getApplicationContext(),"Thêm thất bại",Toast.LENGTH_SHORT).show();

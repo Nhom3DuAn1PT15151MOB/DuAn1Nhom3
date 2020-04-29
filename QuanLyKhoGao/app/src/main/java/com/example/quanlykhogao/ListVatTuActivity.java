@@ -2,31 +2,35 @@ package com.example.quanlykhogao;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import com.example.quanlykhogao.adapter.VatTuAdapter;
+import com.example.quanlykhogao.adapter.VatTuRecycleView;
 import com.example.quanlykhogao.model.VatTu;
 import com.example.quanlykhogao.sqlite.AppDatabase;
 import java.util.List;
 
 public class ListVatTuActivity extends AppCompatActivity {
-ListView listView ;
-VatTuAdapter adapter;
+RecyclerView recyclerView ;
+List<VatTu> vatTus;
+VatTuRecycleView vatTuRecycleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_vat_tu);
         setTitle("Vật Tư");
-        listView = findViewById(R.id.lvVatTu);
+        recyclerView = findViewById(R.id.recyclerviewVT);
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"VatTu").allowMainThreadQueries().build();
-        List<VatTu> vatTuList = db.vatTuDAO().getAll();
-        adapter = new VatTuAdapter(vatTuList,ListVatTuActivity.this);
-        listView.setAdapter(adapter);
+        vatTus = db.vatTuDAO().getAll();
+        vatTuRecycleView = new VatTuRecycleView(this,vatTus);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(vatTuRecycleView);
 
     }
 

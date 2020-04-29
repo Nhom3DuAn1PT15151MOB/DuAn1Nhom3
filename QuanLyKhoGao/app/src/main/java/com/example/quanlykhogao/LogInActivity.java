@@ -31,7 +31,7 @@ public class LogInActivity extends AppCompatActivity  {
         chkRememberPass = findViewById(R.id.checkbox);
         initPreFerences();
         String data = sharedPreferences.getString("DATA", "");
-        edUserName.setText("admin");
+        edUserName.setText("0333049379");
         String data2 = sharedPreferences.getString("DATA2", "");
         edPassword.setText("admin");
     }
@@ -74,7 +74,7 @@ public boolean check(){
 
     public int checkLogin(String u, String p) {
 
-        if (u.equals("admin") && p.equals("admin")) {
+        if (u.equals("0333049379") && p.equals("admin")) {
             return 1;
         } else {
             return -1;

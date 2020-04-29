@@ -2,45 +2,42 @@ package com.example.quanlykhogao;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import com.example.quanlykhogao.adapter.NguoiDungAdapter;
+import android.widget.Toast;
+import com.example.quanlykhogao.adapter.NguoiDungRecycleView;
 import com.example.quanlykhogao.model.NguoiDung;
 import com.example.quanlykhogao.sqlite.AppDatabase;
-import com.example.quanlykhogao.thread.NguoiDungQueryTask;
 import java.util.List;
 
 public class ListNguoiDungActivity extends AppCompatActivity {
-    ListView listView;
-    NguoiDungAdapter adapter;
+    RecyclerView recyclerView;
+    NguoiDungRecycleView adapter;
     List<NguoiDung> nguoiDungList ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_nguoi_dung);
         setTitle("Người Dùng");
-        listView = findViewById(R.id.lvKhoGao);
+        recyclerView = findViewById(R.id.recycleview);
         AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "NguoiDung.db").allowMainThreadQueries().build();
-        NguoiDungQueryTask nguoiDungQueryTask = new NguoiDungQueryTask(this);
-        try {
-           nguoiDungList = db.nguoiDungDAO().getAll();
-           adapter = new NguoiDungAdapter(nguoiDungList, this);
-           listView.setAdapter(adapter);
+        nguoiDungList = db.nguoiDungDAO().getAll();
+       try {
+           adapter = new NguoiDungRecycleView(this, nguoiDungList);
+           LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+           recyclerView.setLayoutManager(linearLayoutManager);
+           recyclerView.setAdapter(adapter);
        }catch (Exception e){
-            Log.e("ERR: ",""+e);
-        }
-        nguoiDungQueryTask.getAllNguoiDung(new NguoiDungQueryTask.OnQuery<List<NguoiDung>>() {
-            @Override
-            public void onResult(List<NguoiDung> nguoiDungs) {
-                ListNguoiDungActivity.this.nguoiDungList.addAll(nguoiDungs);
-                adapter.notifyDataSetChanged();
-            }
-        });
+           Log.e("ERR",""+e);
+       }
+       int size = nguoiDungList.size();
+        Toast.makeText(getApplicationContext(),""+size,Toast.LENGTH_SHORT).show();
     }
 
     @Override

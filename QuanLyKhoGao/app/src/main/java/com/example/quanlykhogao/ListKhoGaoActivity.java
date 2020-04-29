@@ -2,30 +2,36 @@ package com.example.quanlykhogao;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import com.example.quanlykhogao.adapter.KhoGaoAdapter;
+import com.example.quanlykhogao.adapter.KhoGaoRecycleView;
 import com.example.quanlykhogao.model.KhoGao;
 import com.example.quanlykhogao.sqlite.AppDatabase;
 import java.util.List;
 
 public class ListKhoGaoActivity extends AppCompatActivity {
-ListView listView ;
-KhoGaoAdapter adapter;
+
+RecyclerView  recyclerView;
+List<KhoGao> khoGaos;
+KhoGaoRecycleView khoGaoRecycleView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Kho Gạo");
         setContentView(R.layout.activity_list_kho_gao);
-        listView = findViewById(R.id.lvKhoGao);
+        recyclerView = findViewById(R.id.recycleview);
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,"KhoGao.db").allowMainThreadQueries().build();
-        List<KhoGao> khoGaos = db.khoGaoDAO().getAll();
-        adapter = new KhoGaoAdapter(khoGaos,ListKhoGaoActivity.this);
-        listView.setAdapter(adapter);
+        khoGaos = db.khoGaoDAO().getAll();
+        khoGaoRecycleView = new KhoGaoRecycleView(this,khoGaos);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(khoGaoRecycleView);
+
 
     }
 
